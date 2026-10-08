@@ -1,0 +1,2014 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="50嵐官方風格手搖茶飲網站 - 新鮮現調，好茶堅持。四季春珍波椰、波霸奶茶、冰淇淋紅茶等經典手搖飲，立即探索菜單與最新優惠。">
+  <title>50嵐 50LAN ｜ 新鮮現調・好茶首選</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-yellow: #FFCC00;
+      --primary-yellow-hover: #E6B800;
+      --primary-yellow-light: #FFF8D6;
+      --primary-blue: #003366;
+      --primary-blue-dark: #002244;
+      --primary-blue-light: #1A4D80;
+      --accent-orange: #FF7A00;
+      --accent-green: #2E8B57;
+      --text-main: #222222;
+      --text-muted: #666666;
+      --text-light: #888888;
+      --bg-light: #FFFDF7;
+      --bg-white: #FFFFFF;
+      --border-color: #EFEFEF;
+      --card-shadow: 0 10px 30px rgba(0, 51, 102, 0.08);
+      --card-shadow-hover: 0 16px 36px rgba(0, 51, 102, 0.16);
+      --transition: all 0.3s ease;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 999px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    button, input, select {
+      font-family: inherit;
+      outline: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ========== Header & Navigation ========== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+      transition: var(--transition);
+    }
+
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 76px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .logo-badge {
+      background: var(--primary-yellow);
+      color: var(--primary-blue);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 900;
+      box-shadow: 0 4px 10px rgba(255, 204, 0, 0.4);
+      border: 3px solid var(--primary-blue);
+    }
+
+    .brand-title {
+      font-size: 24px;
+      color: var(--primary-blue);
+      letter-spacing: 1px;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-title small {
+      font-size: 11px;
+      letter-spacing: 2px;
+      font-family: 'Poppins', sans-serif;
+      color: var(--accent-orange);
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--primary-blue);
+      position: relative;
+      transition: var(--transition);
+      padding: 6px 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--primary-yellow);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 22px;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      border: none;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-yellow {
+      background: var(--primary-yellow);
+      color: var(--primary-blue);
+      box-shadow: 0 4px 12px rgba(255, 204, 0, 0.4);
+    }
+
+    .btn-yellow:hover {
+      background: var(--primary-yellow-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(255, 204, 0, 0.5);
+    }
+
+    .btn-blue {
+      background: var(--primary-blue);
+      color: #fff;
+    }
+
+    .btn-blue:hover {
+      background: var(--primary-blue-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 51, 102, 0.3);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--primary-blue);
+      color: var(--primary-blue);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--primary-blue);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 26px;
+      color: var(--primary-blue);
+      cursor: pointer;
+    }
+
+    /* ========== Promo Coupon Bar ========== */
+    .promo-banner {
+      background: var(--primary-blue);
+      color: #fff;
+      padding: 16px 0;
+    }
+
+    .promo-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .promo-text {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .promo-tag {
+      background: var(--primary-yellow);
+      color: var(--primary-blue);
+      padding: 4px 12px;
+      font-weight: 900;
+      font-size: 12px;
+      border-radius: var(--radius-sm);
+    }
+
+    .coupon-box {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px dashed var(--primary-yellow);
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      gap: 10px;
+    }
+
+    .coupon-code {
+      font-family: 'Poppins', monospace;
+      font-weight: 800;
+      color: var(--primary-yellow);
+      letter-spacing: 1px;
+    }
+
+    .btn-copy {
+      background: var(--primary-yellow);
+      color: var(--primary-blue);
+      font-weight: 700;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-copy:hover {
+      background: #fff;
+    }
+
+    /* ========== Hero Section ========== */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #FFF6D1 0%, #FFFFFF 60%, #EBF4FA 100%);
+      padding: 70px 0 90px;
+      overflow: hidden;
+    }
+
+    .hero-decor-circle {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 204, 0, 0.35) 0%, rgba(255, 204, 0, 0) 70%);
+      top: -100px;
+      right: -80px;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary-blue);
+      border-left: 4px solid var(--primary-yellow);
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: clamp(32px, 4.8vw, 54px);
+      font-weight: 900;
+      color: var(--primary-blue);
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(120deg, var(--accent-orange), #D62828);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+    }
+
+    .hero-desc {
+      font-size: 17px;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      max-width: 540px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 28px;
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(0, 51, 102, 0.1);
+    }
+
+    .stat-item h3 {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--primary-blue);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .stat-item p {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Hero Card Display */
+    .hero-card {
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--card-shadow);
+      border: 3px solid var(--primary-yellow);
+      position: relative;
+      text-align: center;
+    }
+
+    .hero-tag-hot {
+      position: absolute;
+      top: -15px;
+      right: 24px;
+      background: #E63946;
+      color: #fff;
+      font-weight: 800;
+      font-size: 12px;
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 10px rgba(230, 57, 70, 0.3);
+      letter-spacing: 1px;
+    }
+
+    .drink-mockup {
+      width: 170px;
+      height: 240px;
+      margin: 10px auto 20px;
+      background: linear-gradient(180deg, #FCEABB 0%, #F8B500 65%, #3E2723 100%);
+      border-radius: 12px 12px 40px 40px;
+      position: relative;
+      box-shadow: 0 16px 28px rgba(0,0,0,0.15);
+      border: 4px solid #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .drink-mockup::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      width: 14px;
+      height: 90px;
+      background: #FF5964;
+      border-radius: 6px;
+      transform: rotate(15deg);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .drink-foam {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 38px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 8px 8px 0 0;
+    }
+
+    .drink-boba-layer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      padding: 0 12px;
+    }
+
+    .boba-dot {
+      width: 16px;
+      height: 16px;
+      background: #1A0D00;
+      border-radius: 50%;
+      box-shadow: inset -2px -2px 4px rgba(255,255,255,0.4);
+    }
+
+    .coconut-cube {
+      width: 14px;
+      height: 14px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 3px;
+    }
+
+    .hero-card h4 {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--primary-blue);
+      margin-bottom: 6px;
+    }
+
+    .hero-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .hero-card-meta {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .price-tag {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--accent-orange);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .badge-recommend {
+      background: var(--primary-yellow-light);
+      color: var(--primary-blue);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--primary-yellow);
+    }
+
+    /* ========== Section Headers ========== */
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-eyebrow {
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--accent-orange);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: clamp(26px, 3.5vw, 38px);
+      font-weight: 900;
+      color: var(--primary-blue);
+      margin-bottom: 12px;
+    }
+
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ========== Top Sellers Section ========== */
+    .top-sellers {
+      padding: 80px 0;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+
+    .product-card {
+      background: var(--bg-white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--card-shadow-hover);
+      border-color: var(--primary-yellow);
+    }
+
+    .card-ribbon {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--primary-blue);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      z-index: 2;
+    }
+
+    .card-ribbon.popular {
+      background: var(--accent-orange);
+    }
+
+    .product-img-wrapper {
+      height: 200px;
+      background: linear-gradient(135deg, #FFF9E6 0%, #FFF0BA 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .drink-art {
+      width: 100px;
+      height: 145px;
+      border-radius: 8px 8px 24px 24px;
+      position: relative;
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .art-tea {
+      background: linear-gradient(180deg, #E8DFB8 0%, #D4AF37 100%);
+    }
+
+    .art-milktea {
+      background: linear-gradient(180deg, #F3DFCE 0%, #B8860B 100%);
+    }
+
+    .art-icecream {
+      background: linear-gradient(180deg, #FFFFFF 25%, #8B4513 100%);
+    }
+
+    .art-fruit {
+      background: linear-gradient(180deg, #FFE4B5 0%, #FF8C00 100%);
+    }
+
+    .product-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--primary-blue);
+      margin-bottom: 6px;
+    }
+
+    .product-subtitle {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-bottom: 12px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .product-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .tag-item {
+      font-size: 11px;
+      background: var(--bg-light);
+      color: var(--text-muted);
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid #eee;
+    }
+
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .product-price {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--accent-orange);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .product-price small {
+      font-size: 13px;
+      color: var(--text-light);
+      font-weight: normal;
+    }
+
+    /* ========== Full Menu & Categorized Tabs ========== */
+    .menu-section {
+      padding: 80px 0;
+      background: #FFFFFF;
+    }
+
+    .menu-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .tab-btn {
+      padding: 10px 22px;
+      border-radius: var(--radius-full);
+      border: 1px solid #E0E0E0;
+      background: #FAFAFA;
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .tab-btn:hover {
+      border-color: var(--primary-yellow);
+      color: var(--primary-blue);
+    }
+
+    .tab-btn.active {
+      background: var(--primary-yellow);
+      color: var(--primary-blue);
+      border-color: var(--primary-yellow);
+      box-shadow: 0 4px 12px rgba(255, 204, 0, 0.4);
+    }
+
+    .menu-table-wrap {
+      background: var(--bg-white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+    }
+
+    .menu-list-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1px;
+      background: #EFEFEF;
+    }
+
+    .menu-item-row {
+      background: #FFFFFF;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition);
+    }
+
+    .menu-item-row:hover {
+      background: #FFFDF5;
+    }
+
+    .menu-item-info h5 {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--primary-blue);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .menu-item-info span {
+      font-size: 12px;
+      color: var(--text-light);
+    }
+
+    .item-badge-mini {
+      font-size: 10px;
+      padding: 2px 6px;
+      background: #FFE5E5;
+      color: #D62828;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    .menu-item-prices {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-align: right;
+    }
+
+    .price-box {
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--primary-blue);
+    }
+
+    .price-box span {
+      font-size: 12px;
+      color: var(--text-light);
+      display: block;
+      font-weight: 500;
+    }
+
+    /* ========== Interactive Drink Customizer ========== */
+    .customizer-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #FFF9E6 0%, #FFFFFF 100%);
+    }
+
+    .customizer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      background: var(--bg-white);
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--card-shadow);
+      border: 2px solid var(--primary-yellow);
+    }
+
+    .custom-control-group {
+      margin-bottom: 24px;
+    }
+
+    .custom-control-group label {
+      display: block;
+      font-weight: 800;
+      color: var(--primary-blue);
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .option-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill-btn {
+      padding: 8px 16px;
+      background: #F4F6F8;
+      border: 1px solid #DFE3E8;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .pill-btn:hover {
+      background: #E8ECEF;
+    }
+
+    .pill-btn.active {
+      background: var(--primary-yellow);
+      color: var(--primary-blue);
+      border-color: var(--primary-yellow);
+      box-shadow: 0 2px 8px rgba(255, 204, 0, 0.4);
+    }
+
+    .preview-board {
+      background: linear-gradient(180deg, #F8FAFC 0%, #EDF2F7 100%);
+      padding: 30px;
+      border-radius: var(--radius-md);
+      text-align: center;
+      border: 1px solid #E2E8F0;
+    }
+
+    .custom-cup-visual {
+      width: 140px;
+      height: 200px;
+      margin: 0 auto 20px;
+      border-radius: 10px 10px 30px 30px;
+      background: linear-gradient(180deg, #FFEFBA 0%, #FFFFFF 100%);
+      border: 4px solid var(--primary-blue);
+      box-shadow: 0 10px 25px rgba(0, 51, 102, 0.15);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding-bottom: 16px;
+      transition: var(--transition);
+    }
+
+    .cup-drink-layer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 75%;
+      background: #F5B300;
+      transition: var(--transition);
+    }
+
+    .cup-toppings {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      justify-content: center;
+      width: 90%;
+    }
+
+    .custom-summary-card {
+      background: #fff;
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 20px;
+      text-align: left;
+      font-size: 14px;
+      border-left: 4px solid var(--primary-yellow);
+    }
+
+    .custom-summary-card p {
+      margin-bottom: 6px;
+    }
+
+    .custom-price-display {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--accent-orange);
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 16px;
+    }
+
+    /* ========== Brand Philosophy ========== */
+    .brand-story {
+      padding: 80px 0;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .story-visual {
+      position: relative;
+    }
+
+    .story-box-bg {
+      background: var(--primary-blue);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .story-box-bg::after {
+      content: '50嵐';
+      position: absolute;
+      right: -20px;
+      bottom: -30px;
+      font-size: 130px;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.05);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .promise-list {
+      display: grid;
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .promise-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .promise-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--primary-yellow);
+      color: var(--primary-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+      font-weight: 900;
+    }
+
+    .promise-item h4 {
+      font-size: 18px;
+      color: var(--primary-blue);
+      margin-bottom: 4px;
+    }
+
+    .promise-item p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    /* ========== Stores & Delivery ========== */
+    .stores-section {
+      padding: 80px 0;
+      background: #FFFFFF;
+    }
+
+    .store-finder-card {
+      background: var(--bg-light);
+      border-radius: var(--radius-md);
+      padding: 30px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 30px;
+    }
+
+    .store-search-form {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .store-input, .store-select {
+      padding: 12px 18px;
+      border: 1px solid #D0D5DD;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      background: #fff;
+    }
+
+    .store-input {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .delivery-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .delivery-card {
+      background: #fff;
+      padding: 24px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+      transition: var(--transition);
+    }
+
+    .delivery-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--card-shadow);
+      border-color: var(--primary-yellow);
+    }
+
+    .delivery-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .bg-green { background: #E8F5E9; color: #2E7D32; }
+    .bg-pink { background: #FCE4EC; color: #C2185B; }
+    .bg-blue { background: #E1F5FE; color: #0288D1; }
+
+    .delivery-info h4 {
+      font-size: 17px;
+      color: var(--primary-blue);
+      margin-bottom: 4px;
+    }
+
+    .delivery-info p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* ========== Footer ========== */
+    footer {
+      background: var(--primary-blue-dark);
+      color: #D3DFEE;
+      padding: 60px 0 30px;
+      border-top: 6px solid var(--primary-yellow);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 17px;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 28px;
+      height: 2px;
+      background: var(--primary-yellow);
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .footer-col ul li a {
+      color: #B2C4D8;
+      transition: var(--transition);
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--primary-yellow);
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 13px;
+      color: #8CA3BD;
+    }
+
+    .student-badge {
+      display: inline-block;
+      margin-top: 8px;
+      background: rgba(255, 204, 0, 0.15);
+      color: var(--primary-yellow);
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 12px;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--primary-blue);
+      color: #fff;
+      padding: 14px 24px;
+      border-radius: var(--radius-sm);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      border-left: 5px solid var(--primary-yellow);
+      font-size: 14px;
+      font-weight: 700;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px);
+      transition: var(--transition);
+      z-index: 9999;
+    }
+
+    .toast.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    /* ========== Responsive Design ========== */
+    @media (max-width: 992px) {
+      .hero-grid, .customizer-grid, .story-grid, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links, .nav-actions .btn-outline {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 24px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 40px 0 60px;
+      }
+      .promo-content {
+        justify-content: center;
+        text-align: center;
+      }
+      .hero-stats {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .customizer-grid {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== 1. Header (Sticky Navigation) ========== -->
+  <header>
+    <div class="container nav-wrap">
+      <a href="#hero" class="brand-logo" aria-label="50嵐 首頁">
+        <div class="logo-badge">50</div>
+        <div class="brand-title">
+          50嵐
+          <small>KOI TEA 1994</small>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#hero" class="active">首頁推薦</a>
+        <a href="#popular">熱銷排行榜</a>
+        <a href="#menu">經典菜單</a>
+        <a href="#customizer">客製調茶</a>
+        <a href="#story">品牌精神</a>
+        <a href="#stores">門市外送</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#customizer" class="btn btn-outline">客製調配</a>
+        <a href="#stores" class="btn btn-yellow">立即點餐 🥤</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="切換選單">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== 2. Promo Banner ========== -->
+  <div class="promo-banner">
+    <div class="container promo-content">
+      <div class="promo-text">
+        <span class="promo-tag">本季限定</span>
+        <span>🎉 全品項消費滿 $100 即贈專屬折價券，天天喝好茶！</span>
+      </div>
+      <div class="coupon-box">
+        <span>優惠碼：</span>
+        <span class="coupon-code" id="couponCode">50LAN2026</span>
+        <button class="btn-copy" onclick="copyCoupon()">複製優惠碼</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== 3. Hero Section ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-decor-circle"></div>
+    <div class="container hero-grid">
+      <!-- 文案區 -->
+      <div class="hero-text-side">
+        <div class="hero-badge">
+          <span>✨</span> 經典好茶・現煮現泡・初心不變
+        </div>
+        <h1 class="hero-title">
+          每一杯，都是新鮮現調的<br>
+          <span>黃金比例</span>
+        </h1>
+        <p class="hero-desc">
+          自 1994 年成立以來，50嵐堅持選用台灣優質原葉茶、每日新鮮現煮珍珠波霸，為每一位喜愛茶飲的你，調製最純粹美味的幸福溫度。
+        </p>
+        <div class="hero-actions" style="display: flex; gap: 14px; flex-wrap: wrap;">
+          <a href="#popular" class="btn btn-yellow" style="padding: 14px 28px; font-size: 16px;">
+            探索超人氣招牌 🌟
+          </a>
+          <a href="#menu" class="btn btn-blue" style="padding: 14px 28px; font-size: 16px;">
+            查看完整菜單 📖
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h3>30+</h3>
+            <p>年手搖好口碑</p>
+          </div>
+          <div class="stat-item">
+            <h3>100%</h3>
+            <p>嚴選優質茶葉</p>
+          </div>
+          <div class="stat-item">
+            <h3>4hr</h3>
+            <p>現煮波霸賞味期</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 招牌視覺卡 (1號 四季春珍波椰) -->
+      <div class="hero-card-side">
+        <div class="hero-card">
+          <div class="hero-tag-hot">全台銷量冠軍 NO.1</div>
+          <div class="drink-mockup">
+            <div class="drink-foam"></div>
+            <div class="drink-boba-layer">
+              <div class="boba-dot"></div>
+              <div class="coconut-cube"></div>
+              <div class="boba-dot"></div>
+              <div class="coconut-cube"></div>
+              <div class="boba-dot"></div>
+              <div class="boba-dot"></div>
+              <div class="coconut-cube"></div>
+            </div>
+          </div>
+          <h4>招牌 1 號：四季春珍波椰</h4>
+          <p>四季春茶香回甘，搭配大波霸、小珍珠與香甜椰果，嚼感三重奏！</p>
+          <div class="hero-card-meta">
+            <span class="price-tag">$50</span>
+            <span class="badge-recommend">推薦：微糖 / 微冰</span>
+          </div>
+          <button class="btn btn-yellow" style="width: 100%;" onclick="quickAdd('四季春珍波椰', 50)">
+            立即加入點餐單 🛒
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 4. Top Sellers (人氣必喝熱門榜) ========== -->
+  <section class="top-sellers" id="popular">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Top Recommendations</div>
+        <h2 class="section-title">人氣必喝熱門榜</h2>
+        <p class="section-desc">不知道喝什麼？跟著大家點準沒錯！精選顧客回購率最高的 4 款人氣招牌飲品。</p>
+      </div>
+
+      <div class="product-grid">
+        <!-- 產品 1 -->
+        <div class="product-card">
+          <div class="card-ribbon popular">店長首推</div>
+          <div class="product-img-wrapper">
+            <div class="drink-art art-tea">
+              <div class="drink-boba-layer" style="margin-bottom: 8px;">
+                <div class="boba-dot"></div>
+                <div class="coconut-cube"></div>
+                <div class="boba-dot"></div>
+              </div>
+            </div>
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">四季春珍波椰</h3>
+            <div class="product-subtitle">Four Seasons Oolong with Triple Toppings</div>
+            <p class="product-desc">傳奇 1 號！茶香清新悠揚，波霸與椰果帶來極致咀嚼享受。</p>
+            <div class="tag-list">
+              <span class="tag-item">大波霸</span>
+              <span class="tag-item">小珍珠</span>
+              <span class="tag-item">高山四季春</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">$50 <small>/ 大杯</small></div>
+              <button class="btn btn-yellow" onclick="quickAdd('四季春珍波椰', 50)">加入點單</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 產品 2 -->
+        <div class="product-card">
+          <div class="card-ribbon">經典不敗</div>
+          <div class="product-img-wrapper">
+            <div class="drink-art art-milktea">
+              <div class="drink-boba-layer" style="margin-bottom: 8px;">
+                <div class="boba-dot"></div>
+                <div class="boba-dot"></div>
+                <div class="boba-dot"></div>
+              </div>
+            </div>
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">波霸奶茶</h3>
+            <div class="product-subtitle">Boba Milk Tea</div>
+            <p class="product-desc">台灣奶茶代表作！茶韻醇厚與絲滑奶香，顆顆波霸 Q 彈入心。</p>
+            <div class="tag-list">
+              <span class="tag-item">招牌波霸</span>
+              <span class="tag-item">阿薩姆紅茶</span>
+              <span class="tag-item">濃郁奶香</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">$60 <small>/ 大杯</small></div>
+              <button class="btn btn-yellow" onclick="quickAdd('波霸奶茶', 60)">加入點單</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 產品 3 -->
+        <div class="product-card">
+          <div class="card-ribbon">甜美療癒</div>
+          <div class="product-img-wrapper">
+            <div class="drink-art art-icecream">
+              <div style="width: 32px; height: 32px; background: #FFF; border-radius: 50%; margin-bottom: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"></div>
+            </div>
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">冰淇淋紅茶</h3>
+            <div class="product-subtitle">Black Tea with Ice Cream</div>
+            <p class="product-desc">香草冰淇淋慢慢融入清爽紅茶，層次豐富，由冰涼沁爽到絲滑甜美。</p>
+            <div class="tag-list">
+              <span class="tag-item">香草冰淇淋</span>
+              <span class="tag-item">原淬紅茶</span>
+              <span class="tag-item">夏日必喝</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">$55 <small>/ 大杯</small></div>
+              <button class="btn btn-yellow" onclick="quickAdd('冰淇淋紅茶', 55)">加入點單</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 產品 4 -->
+        <div class="product-card">
+          <div class="card-ribbon">清新解渴</div>
+          <div class="product-img-wrapper">
+            <div class="drink-art art-fruit">
+              <div style="width: 20px; height: 20px; background: #FFD700; border-radius: 50%; margin-bottom: 20px;"></div>
+            </div>
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">旺來青茶 / 鮮柚綠</h3>
+            <div class="product-subtitle">Grapefruit Green Tea / Pineapple Tea</div>
+            <p class="product-desc">嚴選天然果汁佐綠茶基底，果香明亮酸甜，大口暢飲生津解膩。</p>
+            <div class="tag-list">
+              <span class="tag-item">原汁鮮果</span>
+              <span class="tag-item">茉莉綠茶</span>
+              <span class="tag-item">低卡首選</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">$65 <small>/ 大杯</small></div>
+              <button class="btn btn-yellow" onclick="quickAdd('鮮柚綠茶', 65)">加入點單</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 5. Full Menu (經典全菜單) ========== -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Full Drink Menu</div>
+        <h2 class="section-title">50嵐經典全菜單</h2>
+        <p class="section-desc">茶葉經嚴格農藥殘留檢驗合格，天天喝得安心又健康。</p>
+      </div>
+
+      <div class="menu-tabs">
+        <button class="tab-btn active" onclick="filterMenu('all', this)">全部飲品</button>
+        <button class="tab-btn" onclick="filterMenu('tea', this)">找好茶</button>
+        <button class="tab-btn" onclick="filterMenu('milktea', this)">找奶茶</button>
+        <button class="tab-btn" onclick="filterMenu('topping', this)">找口感</button>
+        <button class="tab-btn" onclick="filterMenu('fruit', this)">找新鮮果茶</button>
+        <button class="tab-btn" onclick="filterMenu('latte', this)">紅茶拿鐵系列</button>
+      </div>
+
+      <div class="menu-table-wrap">
+        <div class="menu-list-grid" id="menuGrid">
+          <!-- 項目列表 (由 JavaScript 動態渲染) -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 6. Interactive Customizer (客製調茶台) ========== -->
+  <section class="customizer-section" id="customizer">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Interactive Studio</div>
+        <h2 class="section-title">50嵐專屬客製調茶台</h2>
+        <p class="section-desc">動動手指，選擇你最喜愛的茶底、甜度、冰量與加料，一秒產出你的客製點茶暗號！</p>
+      </div>
+
+      <div class="customizer-grid">
+        <!-- 控制選單 (4 個維度) -->
+        <div class="custom-controls">
+          <div class="custom-control-group">
+            <label>1. 選擇茶底基底</label>
+            <div class="option-pills" id="basePills">
+              <button class="pill-btn active" data-type="base" data-val="四季春茶" data-price="35">四季春茶 ($35)</button>
+              <button class="pill-btn" data-type="base" data-val="阿薩姆紅茶" data-price="35">阿薩姆紅茶 ($35)</button>
+              <button class="pill-btn" data-type="base" data-val="茉莉綠茶" data-price="35">茉莉綠茶 ($35)</button>
+              <button class="pill-btn" data-type="base" data-val="經典奶茶" data-price="50">經典奶茶 ($50)</button>
+              <button class="pill-btn" data-type="base" data-val="鮮奶紅茶拿鐵" data-price="60">鮮奶紅茶拿鐵 ($60)</button>
+            </div>
+          </div>
+
+          <div class="custom-control-group">
+            <label>2. 選擇甜度 (Sugar)</label>
+            <div class="option-pills" id="sugarPills">
+              <button class="pill-btn" data-type="sugar" data-val="正常糖 (10分)">正常 (10分)</button>
+              <button class="pill-btn" data-type="sugar" data-val="少糖 (7分)">少糖 (7分)</button>
+              <button class="pill-btn" data-type="sugar" data-val="半糖 (5分)">半糖 (5分)</button>
+              <button class="pill-btn active" data-type="sugar" data-val="微糖 (3分)">微糖 (3分) ⭐</button>
+              <button class="pill-btn" data-type="sugar" data-val="無糖 (0分)">無糖 (0分)</button>
+            </div>
+          </div>
+
+          <div class="custom-control-group">
+            <label>3. 選擇冰塊 (Ice)</label>
+            <div class="option-pills" id="icePills">
+              <button class="pill-btn" data-type="ice" data-val="正常冰">正常冰</button>
+              <button class="pill-btn" data-type="ice" data-val="少冰">少冰</button>
+              <button class="pill-btn active" data-type="ice" data-val="微冰">微冰 ⭐</button>
+              <button class="pill-btn" data-type="ice" data-val="去冰">去冰</button>
+              <button class="pill-btn" data-type="ice" data-val="溫熱飲">溫熱飲 🔥</button>
+            </div>
+          </div>
+
+          <div class="custom-control-group">
+            <label>4. 選擇加料 (Topping)</label>
+            <div class="option-pills" id="toppingPills">
+              <button class="pill-btn" data-type="topping" data-val="不加料" data-price="0">不加料 ($0)</button>
+              <button class="pill-btn active" data-type="topping" data-val="珍波椰 (珍珠+波霸+椰果)" data-price="15">珍波椰 (+$15) 🔥</button>
+              <button class="pill-btn" data-type="topping" data-val="大波霸" data-price="10">大波霸 (+$10)</button>
+              <button class="pill-btn" data-type="topping" data-val="香甜椰果" data-price="10">香甜椰果 (+$10)</button>
+              <button class="pill-btn" data-type="topping" data-val="香草冰淇淋" data-price="20">香草冰淇淋 (+$20)</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 預覽與生成 -->
+        <div class="preview-board">
+          <div class="custom-cup-visual" id="cupVisual">
+            <div class="cup-drink-layer" id="cupDrinkLayer"></div>
+            <div class="cup-toppings" id="cupToppingVisual">
+              <div class="boba-dot"></div>
+              <div class="coconut-cube"></div>
+              <div class="boba-dot"></div>
+              <div class="coconut-cube"></div>
+              <div class="boba-dot"></div>
+            </div>
+          </div>
+
+          <div class="custom-summary-card">
+            <p><strong>調飲配方：</strong><span id="summaryDrink">四季春茶 + 珍波椰 (珍珠+波霸+椰果)</span></p>
+            <p><strong>規格說明：</strong><span id="summarySpec">微糖 (3分) / 微冰</span></p>
+            <p><strong>調配代碼：</strong><code id="drinkCode" style="color: var(--primary-blue); font-weight: bold;">50L-CUSTOM-2026</code></p>
+          </div>
+
+          <div class="custom-price-display">
+            預估金額：$<span id="customPrice">50</span> 元
+          </div>
+
+          <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <button class="btn btn-yellow" onclick="copyCustomOrder()">📋 複製點餐內容</button>
+            <button class="btn btn-blue" onclick="quickAddCustom()">🛒 加入點餐單</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 7. Brand Story (品牌精神) ========== -->
+  <section class="brand-story" id="story">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-visual">
+          <div class="story-box-bg">
+            <div class="brand-badge-circle" style="width: 60px; height: 60px; background: var(--primary-yellow); color: var(--primary-blue); font-size: 24px; font-weight: 900; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+              50
+            </div>
+            <h3 style="font-size: 28px; font-weight: 900; margin-bottom: 14px;">好茶堅持，鮮調自然</h3>
+            <p style="font-size: 15px; opacity: 0.9; line-height: 1.8;">
+              50嵐堅持每一杯茶飲都依顧客需求現點現泡。從台南路邊的一只攤車出發，至今遍佈全台街角，我們始終秉持對品質的最高標準，提供乾淨、安心、回甘的手搖茶體驗。
+            </p>
+          </div>
+        </div>
+
+        <div class="story-content">
+          <div class="section-eyebrow">Our Philosophy</div>
+          <h2 class="section-title" style="text-align: left;">我們對每一杯好茶的承諾</h2>
+          <div class="promise-list">
+            <div class="promise-item">
+              <div class="promise-icon">🍃</div>
+              <div>
+                <h4>原葉現淬高山茶</h4>
+                <p>嚴選在地高山茶葉，精準溫控現泡保留自然回甘，絕不使用次級茶角。</p>
+              </div>
+            </div>
+            <div class="promise-item">
+              <div class="promise-icon">⏱️</div>
+              <div>
+                <h4>四小時黃金賞味期</h4>
+                <p>波霸珍珠堅持每日定時現煮，超過4小時立即淘汰，絕不保留至隔餐。</p>
+              </div>
+            </div>
+            <div class="promise-item">
+              <div class="promise-icon">🥛</div>
+              <div>
+                <h4>嚴選優質鮮奶</h4>
+                <p>鮮奶拿鐵系列全面採用高品質純鮮乳，香醇順口，每一口都安心可靠。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 8. Stores & Delivery (門市查詢與即時外送) ========== -->
+  <section class="stores-section" id="stores">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Store & Delivery</div>
+        <h2 class="section-title">全台門市與即時外送</h2>
+        <p class="section-desc">想喝好茶隨時有！無論臨櫃取餐或是外送到府，迅速品味新鮮茶香。</p>
+      </div>
+
+      <div class="store-finder-card">
+        <div class="store-search-form">
+          <select class="store-select" id="citySelect" onchange="filterStores()">
+            <option value="all">全台灣 (All Cities)</option>
+            <option value="taipei">台北市 / 新北市</option>
+            <option value="taichung">台中市</option>
+            <option value="tainan">台南市</option>
+            <option value="kaohsiung">高雄市</option>
+          </select>
+          <input type="text" class="store-input" id="storeKeyword" placeholder="輸入門市名稱或道路（例如：公館、復興、逢甲...）" oninput="filterStores()">
+          <button class="btn btn-yellow" onclick="filterStores()">查詢門市 🔍</button>
+        </div>
+      </div>
+
+      <div id="storeResults" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+        <!-- 門市卡片由 JS 動態生成 -->
+      </div>
+
+      <!-- 外送合作服務 -->
+      <div class="delivery-options">
+        <a href="https://www.ubereats.com" target="_blank" rel="noopener noreferrer" class="delivery-card">
+          <div class="delivery-icon bg-green">🟢</div>
+          <div class="delivery-info">
+            <h4>Uber Eats 外送專區</h4>
+            <p>即時追蹤外送員位置，熱飲冷飲新鮮直送</p>
+          </div>
+        </a>
+
+        <a href="https://www.foodpanda.com.tw" target="_blank" rel="noopener noreferrer" class="delivery-card">
+          <div class="delivery-icon bg-pink">🐼</div>
+          <div class="delivery-info">
+            <h4>foodpanda 熊貓外送</h4>
+            <p>搭配 pandapro 會員天天享免運及獨家折價</p>
+          </div>
+        </a>
+
+        <div class="delivery-card" style="cursor: pointer;" onclick="alert('線上快速預約自取功能即將上線！請撥打鄰近門市專線電話預訂。')">
+          <div class="delivery-icon bg-blue">📞</div>
+          <div class="delivery-info">
+            <h4>電話自取免排隊</h4>
+            <p>撥打鄰近門市專線，到店即取最省時</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 9. Footer (頁尾) ========== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="logo-badge" style="width: 40px; height: 40px; font-size: 16px;">50</div>
+            <div class="brand-title" style="color: #fff; font-size: 20px;">
+              50嵐
+              <small style="color: var(--primary-yellow);">KOI TEA 1994</small>
+            </div>
+          </div>
+          <p style="font-size: 14px; line-height: 1.7; color: #A6BFD9; max-width: 320px;">
+            50嵐致力於為每一位喜愛茶飲的顧客提供最高品質的新鮮手搖飲。茶湯鮮泡、波霸現煮、甜度冰量隨選，伴您每一天的甘甜時光。
+          </p>
+          <div class="student-badge">
+            學號：11425206 ｜ 學生網頁製作專案
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>熱門分類</h4>
+          <ul>
+            <li><a href="#menu" onclick="filterMenu('tea')">找好茶系列</a></li>
+            <li><a href="#menu" onclick="filterMenu('milktea')">找奶茶系列</a></li>
+            <li><a href="#menu" onclick="filterMenu('topping')">找口感系列</a></li>
+            <li><a href="#menu" onclick="filterMenu('latte')">紅茶拿鐵系列</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>顧客服務</h4>
+          <ul>
+            <li><a href="#customizer">客製調飲指南</a></li>
+            <li><a href="#stores">全台門市查詢</a></li>
+            <li><a href="#hero">最新優惠促銷</a></li>
+            <li><a href="#story">茶葉與原物料檢驗</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>服務專線</h4>
+          <p style="font-size: 14px; color: #A6BFD9; margin-bottom: 8px;">客服專線：0800-050-500</p>
+          <p style="font-size: 14px; color: #A6BFD9; margin-bottom: 14px;">服務時間：週一至週五 09:00 - 18:00</p>
+          <div style="display: flex; gap: 10px;">
+            <span style="background: rgba(255,255,255,0.1); padding: 6px 12px; border-radius: 4px; font-size: 13px;">Facebook</span>
+            <span style="background: rgba(255,255,255,0.1); padding: 6px 12px; border-radius: 4px; font-size: 13px;">Instagram</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2028 50嵐 50LAN 手搖茶飲專賣店. All Rights Reserved. 版權所有。</p>
+        <p style="margin-top: 6px; font-size: 12px; color: #6D8BA6;">本頁面為網頁設計作業（規格檔 onepage.md 生成展示網頁）</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== 10. Global Toast ========== -->
+  <div class="toast" id="toastMessage">已成功加入點餐單！</div>
+
+  <!-- ========== JavaScript Logic ========== -->
+  <script>
+    // 6.1 全品項菜單資料模型
+    const menuData = [
+      { name: "四季春青茶", en: "Four Seasons Oolong Tea", cat: "tea", priceM: 30, priceL: 35, hot: true, tag: "甘甜首選" },
+      { name: "茉莉綠茶", en: "Jasmine Green Tea", cat: "tea", priceM: 30, priceL: 35, hot: false, tag: "清新香氣" },
+      { name: "阿薩姆紅茶", en: "Assam Black Tea", cat: "tea", priceM: 30, priceL: 35, hot: false, tag: "醇厚甘醇" },
+      { name: "黃金烏龍", en: "Golden Oolong Tea", cat: "tea", priceM: 30, priceL: 35, hot: false, tag: "回甘生津" },
+      { name: "檸檬綠茶", en: "Lemon Green Tea", cat: "fruit", priceM: 45, priceL: 55, hot: false, tag: "生津止渴" },
+      { name: "梅果綠茶", en: "Plum Green Tea", cat: "fruit", priceM: 45, priceL: 55, hot: false, tag: "古早味酸甜" },
+      { name: "鮮柚綠茶", en: "Grapefruit Green Tea", cat: "fruit", priceM: 55, priceL: 65, hot: true, tag: "果汁含量高" },
+      { name: "波霸奶茶", en: "Boba Milk Tea", cat: "milktea", priceM: 50, priceL: 60, hot: true, tag: "鎮店之寶" },
+      { name: "珍珠奶茶", en: "Small Pearl Milk Tea", cat: "milktea", priceM: 50, priceL: 60, hot: false, tag: "小珍珠細膩" },
+      { name: "椰果奶茶", en: "Coconut Jelly Milk Tea", cat: "milktea", priceM: 50, priceL: 60, hot: false, tag: "酸甜有勁" },
+      { name: "四季春珍波椰 (1號)", en: "Four Seasons Oolong + 3 Toppings", cat: "topping", priceM: 40, priceL: 50, hot: true, tag: "全台第一" },
+      { name: "波霸紅茶拿鐵", en: "Boba Black Tea Latte", cat: "latte", priceM: 55, priceL: 70, hot: true, tag: "優質純鮮奶" },
+      { name: "燕麥紅茶拿鐵", en: "Oat Black Tea Latte", cat: "latte", priceM: 55, priceL: 70, hot: true, tag: "滿滿飽足感" },
+      { name: "冰淇淋紅茶", en: "Ice Cream Black Tea", cat: "topping", priceM: 45, priceL: 55, hot: true, tag: "甜蜜雙享" },
+      { name: "阿華田", en: "Ovaltine Malt Chocolate", cat: "milktea", priceM: 45, priceL: 55, hot: false, tag: "濃郁可可" }
+    ];
+
+    // 6.2 門市據點資料模型
+    const storeData = [
+      { name: "50嵐 台北公館旗艦店", city: "taipei", addr: "台北市中正區羅斯福路四段24巷", phone: "02-2368-8888", time: "10:00 - 22:30" },
+      { name: "50嵐 台北復興忠孝店", city: "taipei", addr: "台北市大安區復興南路一段135巷", phone: "02-2771-5050", time: "10:00 - 23:00" },
+      { name: "50嵐 台中逢甲夜市店", city: "taichung", addr: "台中市西屯區福星路420號", phone: "04-2452-5050", time: "10:30 - 23:30" },
+      { name: "50嵐 台中一中水利店", city: "taichung", addr: "台中市北區尊賢街22號", phone: "04-2225-5050", time: "10:00 - 22:30" },
+      { name: "50嵐 台南創始東門店", city: "tainan", addr: "台南市東區東門路二段100號", phone: "06-234-5050", time: "09:30 - 22:00" },
+      { name: "50嵐 高雄新堀江文化店", city: "kaohsiung", addr: "高雄市新興區文化路88號", phone: "07-281-5050", time: "10:00 - 22:30" }
+    ];
+
+    // 6.3 客製狀態管理機
+    let customState = {
+      base: "四季春茶",
+      basePrice: 35,
+      sugar: "微糖 (3分)",
+      ice: "微冰",
+      topping: "珍波椰 (珍珠+波霸+椰果)",
+      toppingPrice: 15
+    };
+
+    // 渲染全品項菜單
+    function renderMenu(category = 'all') {
+      const grid = document.getElementById('menuGrid');
+      const filtered = category === 'all' ? menuData : menuData.filter(item => item.cat === category);
+      
+      grid.innerHTML = filtered.map(item => `
+        <div class="menu-item-row">
+          <div class="menu-item-info">
+            <h5>
+              ${item.name}
+              ${item.hot ? '<span class="item-badge-mini">HOT 🔥</span>' : ''}
+            </h5>
+            <span>${item.en}</span>
+          </div>
+          <div class="menu-item-prices">
+            <div class="price-box">
+              $${item.priceM}
+              <span>中杯 (M)</span>
+            </div>
+            <div class="price-box" style="color: var(--accent-orange);">
+              $${item.priceL}
+              <span>大杯 (L)</span>
+            </div>
+            <button class="btn btn-yellow" style="padding: 6px 12px; font-size: 13px;" onclick="quickAdd('${item.name}', ${item.priceL})">+</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // 菜單篩選切換
+    function filterMenu(category, btnElement) {
+      if (btnElement) {
+        document.querySelectorAll('.menu-tabs .tab-btn').forEach(btn => btn.classList.remove('active'));
+        btnElement.classList.add('active');
+      } else {
+        // 若是從頁尾或其他連結點擊，同步高亮對應 tab
+        document.querySelectorAll('.menu-tabs .tab-btn').forEach(btn => {
+          if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(`'${category}'`)) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+      }
+      renderMenu(category);
+    }
+
+    // 渲染門市查詢
+    function renderStores(list) {
+      const results = document.getElementById('storeResults');
+      if (list.length === 0) {
+        results.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 30px; color: #888;">找不到符合條件的門市，請嘗試不同關鍵字。</div>`;
+        return;
+      }
+      results.innerHTML = list.map(s => `
+        <div style="background: #fff; border-radius: var(--radius-sm); padding: 20px; border: 1px solid var(--border-color); box-shadow: 0 2px 10px rgba(0,0,0,0.03);">
+          <h4 style="color: var(--primary-blue); font-size: 16px; margin-bottom: 6px; font-weight: 800;">${s.name}</h4>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 4px;">📍 ${s.addr}</p>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 4px;">📞 ${s.phone}</p>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">⏰ 營業時間：${s.time}</p>
+          <a href="tel:${s.phone.replace(/[^0-9]/g, '')}" class="btn btn-outline" style="font-size: 12px; padding: 6px 12px; width: 100%;">撥打電話預訂</a>
+        </div>
+      `).join('');
+    }
+
+    // 門市多條件篩選
+    function filterStores() {
+      const city = document.getElementById('citySelect').value;
+      const kw = document.getElementById('storeKeyword').value.trim().toLowerCase();
+
+      const matched = storeData.filter(s => {
+        const matchCity = (city === 'all' || s.city === city);
+        const matchKw = (!kw || s.name.toLowerCase().includes(kw) || s.addr.toLowerCase().includes(kw));
+        return matchCity && matchKw;
+      });
+
+      renderStores(matched);
+    }
+
+    // 客製化調飲台初始化與監聽
+    function initCustomizer() {
+      const pillButtons = document.querySelectorAll('.custom-controls .pill-btn');
+      pillButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const type = this.getAttribute('data-type');
+          const val = this.getAttribute('data-val');
+          const price = parseInt(this.getAttribute('data-price') || '0', 10);
+
+          // 更新同群組 active 狀態
+          const parentGroup = this.closest('.option-pills');
+          parentGroup.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+
+          if (type === 'base') {
+            customState.base = val;
+            customState.basePrice = price;
+          } else if (type === 'sugar') {
+            customState.sugar = val;
+          } else if (type === 'ice') {
+            customState.ice = val;
+          } else if (type === 'topping') {
+            customState.topping = val;
+            customState.toppingPrice = price;
+          }
+
+          updateCustomizerView();
+        });
+      });
+      updateCustomizerView();
+    }
+
+    // 更新自訂調飲台畫面
+    function updateCustomizerView() {
+      const totalPrice = customState.basePrice + customState.toppingPrice;
+      document.getElementById('summaryDrink').textContent = `${customState.base} + ${customState.topping}`;
+      document.getElementById('summarySpec').textContent = `${customState.sugar} / ${customState.ice}`;
+      document.getElementById('customPrice').textContent = totalPrice;
+
+      // 產生專屬調配代碼 50L-CUSTOM-XXXX
+      const randomCode = `50L-CUSTOM-${Math.floor(1000 + Math.random() * 9000)}`;
+      document.getElementById('drinkCode').textContent = randomCode;
+
+      // 動態更新杯身視覺漸層顏色
+      const drinkLayer = document.getElementById('cupDrinkLayer');
+      if (customState.base.includes('奶茶')) {
+        drinkLayer.style.background = '#C99E66';
+      } else if (customState.base.includes('拿鐵')) {
+        drinkLayer.style.background = '#E0C097';
+      } else if (customState.base.includes('紅茶')) {
+        drinkLayer.style.background = '#964B00';
+      } else {
+        drinkLayer.style.background = '#E5A910';
+      }
+
+      // 動態更新配料元素視覺
+      const toppingLayer = document.getElementById('cupToppingVisual');
+      if (customState.topping === '不加料') {
+        toppingLayer.innerHTML = '';
+      } else if (customState.topping.includes('波霸')) {
+        toppingLayer.innerHTML = '<div class="boba-dot"></div><div class="boba-dot"></div><div class="boba-dot"></div><div class="boba-dot"></div>';
+      } else if (customState.topping.includes('椰果')) {
+        toppingLayer.innerHTML = '<div class="coconut-cube"></div><div class="coconut-cube"></div><div class="coconut-cube"></div>';
+      } else if (customState.topping.includes('珍波椰')) {
+        toppingLayer.innerHTML = '<div class="boba-dot"></div><div class="coconut-cube"></div><div class="boba-dot"></div><div class="coconut-cube"></div><div class="boba-dot"></div>';
+      } else if (customState.topping.includes('冰淇淋')) {
+        toppingLayer.innerHTML = '<div style="width: 26px; height: 26px; background: #fff; border-radius: 50%; box-shadow: 0 2px 6px rgba(0,0,0,0.15);"></div>';
+      }
+    }
+
+    // 複製客製調配指令
+    function copyCustomOrder() {
+      const totalPrice = customState.basePrice + customState.toppingPrice;
+      const code = document.getElementById('drinkCode').textContent;
+      const text = `【50嵐客製點單 ${code}】${customState.base} 加 ${customState.topping} (${customState.sugar} / ${customState.ice}) 大杯 $${totalPrice}`;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(`已複製點單內容：${text}`);
+        }).catch(() => {
+          showToast(`已複製點單內容！`);
+        });
+      } else {
+        showToast(`已複製點單內容！`);
+      }
+    }
+
+    // 加入客製飲品到點單
+    function quickAddCustom() {
+      const totalPrice = customState.basePrice + customState.toppingPrice;
+      showToast(`已加入點餐單：${customState.base} + ${customState.topping} ($${totalPrice})`);
+    }
+
+    // 快捷加入點餐單
+    function quickAdd(name, price) {
+      showToast(`已將「${name} ($${price})」加入點餐單！🛒`);
+    }
+
+    // 複製優惠券代碼
+    function copyCoupon() {
+      const code = document.getElementById('couponCode').textContent;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).then(() => {
+          showToast(`優惠碼【${code}】已成功複製！結帳時輸入享優惠！`);
+        }).catch(() => {
+          showToast(`優惠碼【${code}】已複製！`);
+        });
+      } else {
+        showToast(`優惠碼【${code}】已複製！`);
+      }
+    }
+
+    // 顯示全域 Toast 提示訊息
+    let toastTimeout = null;
+    function showToast(msg) {
+      const toast = document.getElementById('toastMessage');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    // 手機端漢堡選單切換
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    if (mobileBtn && navLinks) {
+      mobileBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+        });
+      });
+    }
+
+    // 滾動導覽高亮同步
+    window.addEventListener('scroll', () => {
+      const sections = ['hero', 'popular', 'menu', 'customizer', 'story', 'stores'];
+      const scrollPos = window.scrollY + 100;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const sec = document.getElementById(sections[i]);
+        if (sec && sec.offsetTop <= scrollPos) {
+          document.querySelectorAll('.nav-links a').forEach(a => {
+            if (a.getAttribute('href') === `#${sections[i]}`) {
+              a.classList.add('active');
+            } else {
+              a.classList.remove('active');
+            }
+          });
+          break;
+        }
+      }
+    });
+
+    // 頁面初始化
+    window.addEventListener('DOMContentLoaded', () => {
+      renderMenu();
+      renderStores(storeData);
+      initCustomizer();
+    });
+  </script>
+</body>
+</html>
